@@ -30,14 +30,30 @@ body {
   font-size: 18px;
 }
 
-.navbar {
+.navbar-container {
   background-color: #1aa9de;
   box-shadow: 0 4px 8px 0 rgb(0 0 0 / 4%); 
   height: 50px;
+
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+}
+
+.navbar-content {
+  width: 8.5rem;
   display: flex;
   justify-content: center;
 }
 
-.display-none  {
-  display: none important!;
+.navbar-span {
+  color: #FFFFFF;
+  font-weight: 700;
 }

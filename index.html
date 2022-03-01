@@ -12,22 +12,46 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="./reset.css">
 	<!-- Bootstrap CSS -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 	<link rel="stylesheet" href="./style.css">
-
+	<link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
 </head>
 
 <body>
 
-	<nav class="navbar">
-		<img src="https://authbackoffice.braspag.com.br/img/top-logo.02e5b2bc.svg" alt="" width="88" height="25"
-			class="d-inline-block align-text-top">
+	<nav class="navbar-container">
+		<div class="navbar-content">
+			<span class="navbar-span">Silent Order Post</span>
+		</div>
+		<div class="navbar-content">
+			<img src="https://authbackoffice.braspag.com.br/img/top-logo.02e5b2bc.svg" alt="" width="88" height="25"
+				class="d-inline-block align-text-top">
+		</div>
+		<div class="navbar-content">
+			<span></span>
+		</div>
 	</nav>
 
 	<div id="main" class="container">
+
+		<form class="bg-white p-4 form-table">
+			<div class="mb-3 table-name">
+				<span>Selecione o ambiente</span>
+			</div>
+
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="flexRadioEnvironment" id="flexRadioSandbox" value="sandbox" onchange="setEnvironment(this);">
+				<label class="form-check-label" for="flexRadioEnviroment">Sandbox</label>
+			</div>
+
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="flexRadioEnvironment" id="flexRadioProduction"
+					value="production" onchange="setEnvironment(this);">
+				<label class="form-check-label" for="flexRadioEnvironment">Produção</label>
+			</div>
+		</form>
 
 		<form class="bg-white p-4 form-table">
 

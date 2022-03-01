@@ -1,10 +1,18 @@
-var environment = getQueryString("env");
+document.addEventListener("DOMContentLoaded", function(event) {  
+  if(environment == 'sandbox') {
+    document.getElementById("flexRadioSandbox").checked = true;
+  } else if (environment == 'production') {
+    document.getElementById("flexRadioProduction").checked = true;
+  }
+});
 
-if (environment == null) {
-  alert('Informe o ambiente para testes!');
-}
-else {
-  document.onload = loadEnvironment(environment);
+var environment = getQueryString("env");
+document.onload = loadEnvironment(environment);
+
+function setEnvironment() {
+  var url = window.location.href.split('?')[0]
+  var urlEnvironment = url + `?env=${document.querySelector('input[name=flexRadioEnvironment]:checked').value}`
+  window.location.href = urlEnvironment
 }
 
 function sendCardData() {
@@ -63,9 +71,9 @@ function sendCardData() {
     enableTokenize: enableTokenizeCheck.checked == true,
     cvvrequired: false
   };
-  
+
   bpSop_silentOrderPost(options);
-  
+
 }
 
 function hideResults() {
